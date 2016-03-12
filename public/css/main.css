@@ -8844,7 +8844,7 @@ textarea {
   align-items: center; }
 
 .bannercontainer h1, h2 {
-  font-family: 'Trebuchet MS'; }
+  font-family: 'Open Sans'; }
 
 #logo {
   width: 120px;
@@ -8874,7 +8874,7 @@ textarea {
   margin-top: 3px;
   margin-bottom: 3px; }
 
-.posting-widget .tag {
+.tag {
   background-color: black;
   color: white;
   font-size: 11px; }
@@ -8891,6 +8891,94 @@ textarea {
 
 .posting-view {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.posting-view .info {
+  width: 100x;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: centre;
+  justify-content: center; }
+
+.posting-view .info h1 {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 2px; }
+
+.posting-view .info p {
+  font-size: 14px;
+  margin-top: 1px;
+  margin-bottom: 1px; }
+
+.posting-view .info h2 {
+  font-size: 18px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.posting-view .info h3 {
+  font-size: 18px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.posting-view .sidebar {
+  width: 60px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: centre; }
+
+.posting-view .sidebar img {
+  width: 40px;
+  height: 40px; }
+
+.posting-view .sidebar h1 {
+  font-size: 18px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.posting-view .sidebar h2 {
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.posting-view .sidebar .tagbox {
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.posting-view .sidebar p {
+  font-size: 14px;
+  margin-top: 1px;
+  margin-bottom: 1px; }
+
+.notification-view {
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  flex-direction: column; }
+
+.notification-view .box {
+  display: flex;
+  flex-direction: row; }
+
+.notification-view .box p {
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.notification-view .box img {
+  width: 30px;
+  height: 30px; }
 
 /*# sourceMappingURL=main.css.map */
