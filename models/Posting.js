@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
-var Employee = require('../models/Employee');
-var Employer = require('../models/Employer');
+var User = require('../models/User');
 
 var postingSchema = new mongoose.Schema({
-    employer: [Employer],
-    employee: [Employee],
+    employer: [User],
+    employee: [User],
     attributes: {
         bio: { type: String, default: '' },
         duration: { type: String, default: '' },
