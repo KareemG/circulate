@@ -33,12 +33,13 @@ block content
       .col-sm-12
         dl.dl-horizontal
           dt.text-muted Current
-          for company in profile.positions.values
-            if company.isCurrent
-              dd
-                strong= company.title
-                |  at
-                strong  #{company.company.name}
+          if profile.positions.values != undefined
+            for company in profile.positions.values
+              if company.isCurrent
+                dd
+                  strong= company.title
+                  |  at
+                  strong  #{company.company.name}
           dt.text-muted Connections
           dd
             strong #{profile.numConnections}

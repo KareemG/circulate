@@ -8790,9 +8790,12 @@ button.close {
     text-transform: uppercase;
     transition: all 0.2s linear; }
 
+<<<<<<< Updated upstream
 * {
   box-sizing: border-box; }
 
+=======
+>>>>>>> Stashed changes
 html {
   position: relative;
   min-height: 100%; }
@@ -8829,6 +8832,7 @@ textarea {
 .fa {
   margin-right: 6px; }
 
+<<<<<<< Updated upstream
 #banner {
   width: 900px; }
 
@@ -8981,4 +8985,6 @@ textarea {
   width: 30px;
   height: 30px; }
 
+=======
+>>>>>>> Stashed changes
 /*# sourceMappingURL=main.css.map */
