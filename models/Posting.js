@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var Employee = require('Employee');
-var Employer = require('Employer');
+var Employee = require('../models/Employee');
+var Employer = require('../models/Employer');
 
 var postingSchema = new mongoose.Schema({
     employer: [Employer],

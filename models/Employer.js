@@ -1,8 +1,8 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
-var Employee = require('Employee');
-var Posting = require('Posting');
+var Employee = require('../models/Employee');
+var Posting = require('../models/Posting');
 
 var employerSchema = new mongoose.Schema({
   email: { type: String, lowercase: true, unique: true },
