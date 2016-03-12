@@ -1,36 +1,27 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
-var Posting = require('../models/Posting')
+var Posting = require('../models/Posting');
 
-var userSchema = new mongoose.Schema({
+var employeeSchema = new mongoose.Schema({
   email: { type: String, lowercase: true, unique: true },
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
   
   linkedin: String,
-
-
   profile: {
     name: { type: String, default: '' },
-    gender: { type: String, default: '' },
-    location: { type: String, default: '' },
-    website: { type: String, default: '' },
-    picture: { type: String, default: '' },
-    companyDesc: { type: String, default: ''},
-    companyName: { type: String, default: ''}
+    companyName: { type: String, default: '' },
+    picture: { type: String, default: '' }
   },
-  potentialMatches: [Posting],
-  employerPostings: [Posting],
-  
-  isEmployee: Number
+  potentialMatches: [Posting]
 }, { timestamps: true });
 
 /**
  * Password hash middleware.
  */
-userSchema.pre('save', function(next) {
+employeeSchema.pre('save', function(next) {
   var user = this;
   if (!user.isModified('password')) {
     return next();
@@ -52,7 +43,7 @@ userSchema.pre('save', function(next) {
 /**
  * Helper method for validating user's password.
  */
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
+employeeSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) {
       return cb(err);
@@ -64,7 +55,7 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 /**
  * Helper method for getting user's gravatar.
  */
-userSchema.methods.gravatar = function(size) {
+employeeSchema.methods.gravatar = function(size) {
   if (!size) {
     size = 200;
   }
@@ -75,6 +66,6 @@ userSchema.methods.gravatar = function(size) {
   return 'https://gravatar.com/avatar/' + md5 + '?s=' + size + '&d=retro';
 };
 
-var User = mongoose.model('User', userSchema);
+var Employee = mongoose.model('Employee', employeeSchema);
 
-module.exports = User;
+module.exports = Employee;

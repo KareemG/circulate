@@ -27,3 +27,21 @@ bower_components
 # OS metadata
 .DS_Store
 Thumbs.db
+
+*.wt
+
+*.2016-03-12T14-13-56Z-00000
+
+*.interim
+
+*.0000000001
+
+*.0000000002
+
+*.lock
+
+WiredTiger
+
+*.turtle
+
+*.bson
