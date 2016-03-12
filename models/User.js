@@ -2,6 +2,7 @@ var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
 var Posting = require('../models/Posting');
+var User = require('../models/User');
 
 var userSchema = new mongoose.Schema({
   email: { type: String, lowercase: true, unique: true },
@@ -23,7 +24,7 @@ var userSchema = new mongoose.Schema({
   },
   potentialMatches: [Posting],
   employerPostings: [Posting],
-  myEmployees: [Users],
+  myEmployees: [User],
   
   isEmployee: Number
 }, { timestamps: true });
