@@ -140,6 +140,7 @@ app.get('/messages', messageController.getMessages);
 app.post('/message', messageController.postMessage);
 app.post('/message/delete', messageController.postDeleteMessage);
 app.get('/employerDashboard', postingController.getPostings);
+//app.get('/employeeDashboard', postingController.getDoubles);
 app.get('/newposting', postingController.getNewPosting);
 
 /**
