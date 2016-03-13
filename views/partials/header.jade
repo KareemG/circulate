@@ -3,7 +3,7 @@
   .container
   
     .navbar-header
-      a(href='/')
+      a(href='/home')
         img(id="logo" src="logo.jpg")
       //button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.sr-only Toggle navigation
@@ -15,9 +15,10 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : undefined)
-          a(href='/') Home
-        li(class=(title == 'API Examples') ? 'active' : undefined)
-          a(href='/api') API Examples
+          a(href='/home') Home
+        if user
+          li(class=(title == 'Dashboard') ? 'active' : undefined)
+            a(href='/') Dashboard
         li(class=(title == 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
       ul.nav.navbar-nav.navbar-right
