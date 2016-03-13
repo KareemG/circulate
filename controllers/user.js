@@ -148,8 +148,6 @@ exports.postUpdateProfile = function(req, res, next) {
   });
 };
 
-exports.postUpdate
-
 /**
  * POST /account/password
  * Update current password.
