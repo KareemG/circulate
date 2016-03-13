@@ -16,8 +16,13 @@ exports.getPostings = function(req, res, next) {
         }
         res.render('postings', {
             title: 'Postings',
-            postings: JSON.stringify(postings)
+            postings: JSON.stringify(postings),
+            
         });
+        res.render('employerDashboard', {
+	    title: 'Employer Dashboard',
+	    postings: JSON.stringify(postings),
+	});
     });
 };
 
