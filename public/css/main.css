@@ -8993,4 +8993,11 @@ textarea {
   width: 30px;
   height: 30px; }
 
+.employer-widget-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
 /*# sourceMappingURL=main.css.map */

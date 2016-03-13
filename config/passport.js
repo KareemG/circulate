@@ -340,7 +340,7 @@ passport.use(new LinkedInStrategy({
       } else {
         User.findById(req.user.id, function(err, user) {
           user.linkedin = profile.id;
-          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          // user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.location = user.profile.location || profile._json.location.name;
           user.profile.picture = user.profile.picture || profile._json.pictureUrl;
@@ -362,9 +362,11 @@ passport.use(new LinkedInStrategy({
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
           done(err);
         } else {
+          console.log("YOLO $$$$$$$$$$$");
           var user = new User();
+          console.log(user);
           user.linkedin = profile.id;
-          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          // user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
           user.email = profile._json.emailAddress;
           user.profile.name = profile.displayName;
           user.profile.location = profile._json.location.name;
