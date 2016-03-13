@@ -108,9 +108,20 @@ exports.postSignup = function(req, res, next) {
         if (err) {
           return next(err);
         }
-        res.redirect('/');
+        res.redirect('/account');
       });
     });
+  });
+};
+
+exports.getUser = function(namez) {
+  User.findOne({ name: namez }, function(err, existingUser) {
+    if (err){
+      console.log(err);
+    } else {
+      console.log(existingUser);
+      return JSON.stringify(existingUser);
+    }
   });
 };
 

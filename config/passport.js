@@ -346,6 +346,9 @@ passport.use(new LinkedInStrategy({
           user.profile.location = user.profile.location || profile._json.location.name;
           user.profile.picture = user.profile.picture || profile._json.pictureUrl;
           user.profile.website = user.profile.website || profile._json.publicProfileUrl;
+          // if (profile.summary) {
+          //   user.profile.bio = profile.summary;
+          // }
           user.save(function(err) {
             req.flash('info', { msg: 'LinkedIn account has been linked.' });
             done(err, user);
@@ -363,9 +366,7 @@ passport.use(new LinkedInStrategy({
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
           done(err);
         } else {
-          console.log("YOLO $$$$$$$$$$$");
           var user = new User();
-          console.log(user);
           console.log("PROFILE");
           console.log(profile);
           user.linkedin = profile.id;
@@ -375,6 +376,9 @@ passport.use(new LinkedInStrategy({
           user.profile.location = profile._json.location.name;
           user.profile.picture = profile._json.pictureUrl;
           user.profile.website = profile._json.publicProfileUrl;
+          // if (profile.summary) {
+          //   user.profile.bio = profile.summary;
+          // }
           user.save(function(err) {
             done(err, user);
           });

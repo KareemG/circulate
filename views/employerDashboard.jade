@@ -10,7 +10,7 @@ block content
   
   .employer-widget-container
     -for(i=0; i<postings.length; i++) {
-      a(href='posting')
+      a(href='posting?id=' + postings[i]._id)
         .posting-widget   
           h1 #{postings[i].duration}
           p #{postings[i].bio}

@@ -4,7 +4,7 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 var Posting = require('../models/Posting');
-
+var userController = require('../controllers/user');
 /**
  * GET /postings
  * Postings page.
@@ -21,12 +21,16 @@ exports.getPostings = function(req, res, next) {
 };
 
 exports.getPosting = function(req, res, next) {
-    var postingId = req.postingId;
-    Posting.findOne({ id: postingId }, function(err, posting) {
+    var postingId = req.query.id;
+    Posting.findOne({ _id: postingId }, function(err, posting) {
         if (err) {
             return next(err);
         }
-        return JSON.stringify(posting);
+        res.render('posting', {
+            title: 'Posting',
+            posting: posting,
+            id: postingId
+        });
     });
 };
 
@@ -38,8 +42,8 @@ exports.getNewPosting = function(req, res, next) {
 
 exports.postPosting = function(req, res) {
     var posting = new Posting({
-        employer: req.body.employer,
-        employee: req.body.employee,
+        employer: req.user.profile.name,
+        employee: userController.getUser(req.body.employee),
         bio: req.body.bio,
         duration: req.body.duration,
         expiryDate: req.body.expiryDate,
