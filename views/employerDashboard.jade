@@ -10,8 +10,8 @@ block content
   .employer-widget-container
     -for(i=1; i<postings.length+1; i++) {
       .posting-widget   
-      h1 #{postings[i].duration}
-        p #{postings[i].bio}
+      h1 #{postings[i].attributes.duration}
+        p #{postings[i].attributes.bio}
         h2
           //-for(j=0; j<postings[i].tags.length; j++) {
            // .tag 
