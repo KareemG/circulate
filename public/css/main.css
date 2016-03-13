@@ -8993,4 +8993,21 @@ textarea {
   width: 30px;
   height: 30px; }
 
+.employer-widget-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+#radio {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid black; }
+
+#isEmployee {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid black; }
+
 /*# sourceMappingURL=main.css.map */
