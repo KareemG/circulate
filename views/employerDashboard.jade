@@ -8,7 +8,7 @@ block content
       | New Posting
   
   .employer-widget-container
-    -for(i=0; i<postings.length; i++) {
+    -for(i=1; i<postings.length+1; i++) {
       .posting-widget   
       h1 #{postings[i].duration}
         p #{postings[i].bio}
