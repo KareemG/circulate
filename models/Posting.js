@@ -12,10 +12,7 @@ var postingSchema = new mongoose.Schema({
         idealSwitches: { type: String, default: '' },
         tags: [String]
     }
-    
-    
 }, { timestamps: true });
 
 var Posting = mongoose.model('Posting', postingSchema);
-
 module.exports = Posting;

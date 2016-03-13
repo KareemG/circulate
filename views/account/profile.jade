@@ -77,9 +77,9 @@ block content
   .form-horizontal
     .form-group
       //.col-sm-offset-3.col-sm-4
-        //if user.instagram
+        if user.instagram
           p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
-       // else
+        else
           p: a(href='/auth/instagram') Link your Instagram account
       //.col-sm-offset-3.col-sm-4
         if user.google

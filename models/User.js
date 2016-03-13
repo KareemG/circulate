@@ -1,16 +1,16 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
-var Posting = require('../models/Posting')
+var Posting = require('../models/Posting');
+var User = require('../models/User');
 
 var userSchema = new mongoose.Schema({
   email: { type: String, lowercase: true, unique: true },
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
-  
-  linkedin: String,
 
+  linkedin: String,
 
   profile: {
     name: { type: String, default: '' },
@@ -18,11 +18,13 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     picture: { type: String, default: '' },
-    companyDesc: { type: String, default: ''},
-    companyName: { type: String, default: ''}
+    companyName: { type: String, default: '' },
+    companyDesc: { type: String, default: '' }
+    
   },
   potentialMatches: [Posting],
   employerPostings: [Posting],
+  myEmployees: [User],
   
   isEmployee: Number
 }, { timestamps: true });
