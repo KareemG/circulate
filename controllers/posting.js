@@ -36,6 +36,12 @@ exports.getPosting = function(req, res, next) {
     });    
 };
 
+exports.getNewPosting = function(req, res, next) {
+    res.render('newPosting', {
+       title: 'New Posting' 
+    });
+}
+
 exports.postPosting = function(req, res) {
     var posting = new Posting({
         employer: req.body.employer,

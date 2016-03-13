@@ -27,7 +27,7 @@ var userSchema = new mongoose.Schema({
   employerPostings: [Posting],
   myEmployees: [User],
   
-  isEmployee: Number
+  isEmployee: String
 }, { timestamps: true });
 
 /**

@@ -17,22 +17,22 @@ block content
       label.col-sm-3.control-label(for='confirmPassword') Confirm Password
       .col-sm-7
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
-    //.form-group
-      //label.col-sm-3.control-label(for='isEmployee') Employer/Employee (0/1)
-      //.col-sm-7
-        //input.form-control(type='isEmployee', name='isEmployee', id='isEmployee' placeholder='0/1')
     .form-group
-      label.col-sm-3.control-label(for='isEmployee')
-      .col-sm-4
-        label.radio.col-sm-4
-          input(type='radio', checked=isEmployee=='0', name='isEmployee', value='Employer', data-toggle='radio')
-          span Employer
-      .col-sm-5
-        label.radio.col-sm-5
-          input(type='radio', checked=isEmployee=='0', name='isEmployee', value='Employee', data-toggle='radio')
-          span Employee
+      label-col-sm-3.control-label(for='isEmployee')
+<<<<<<< HEAD
+        input(type="radio", name='isEmployee', id="radio", value=0, checked=isEmployee=="0")
+        | Employer 
+        span(style="margin-left: 30px;")
+        input(type="radio", name='isEmployee', id="radio", value=1, checked=isEmployee=="1")  
+=======
+      .col-sm-7
+        input(type="radio", name='isEmployee', value=0, checked=isEmployee==0)
+        | Employer
+        input(type="radio", name='isEmployee', value=1, checked=isEmployee==1)  
+>>>>>>> 3a26c4459510941111649c38cb64b7fea090d23f
+        | Employee
     .form-group
       .col-sm-offset-3.col-sm-7
         button.btn.btn-success(type='submit')
           i.fa.fa-user-plus
-          | Signup
+          | Sign Up
