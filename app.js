@@ -133,7 +133,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 // New routes
 app.get('/postings', postingController.getPostings);
 app.get('/posting', postingController.getPosting); 
-app.post('/posting', postingController.postPosting);
+app.post('/newposting', postingController.postPosting);
 app.post('/posting/update', postingController.postUpdatePosting);
 app.post('/posting/delete', postingController.postDeletePosting);
 app.get('/messages', messageController.getMessages);
@@ -204,7 +204,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
 });
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/');
+  res.redirect(req.session.returnTo || '/account');
 });
 
 /**

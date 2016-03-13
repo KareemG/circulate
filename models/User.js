@@ -17,9 +17,9 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     picture: { type: String, default: '' },
-    companyName: { type: String, default: '' },
-    companyDesc: { type: String, default: '' }
   },
+  companyName: String,
+  companyDesc: String,
   tokens: Array,
   potentialMatches: [Posting],
   employerPostings: [Posting],

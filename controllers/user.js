@@ -91,7 +91,8 @@ exports.postSignup = function(req, res, next) {
   var user = new User({
     email: req.body.email,
     password: req.body.password,
-    isEmployee: req.body.isEmployee
+    isEmployee: req.body.isEmployee,
+    companyName: req.body.companyName
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
@@ -137,6 +138,7 @@ exports.postUpdateProfile = function(req, res, next) {
     user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
+    user.companyName = req.body.companyName || '';
     user.save(function(err) {
       if (err) {
         return next(err);
