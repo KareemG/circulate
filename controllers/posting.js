@@ -33,6 +33,8 @@ exports.getPosting = function(req, res, next) {
 
 exports.postPosting = function(req, res) {
     var posting = new Posting({
+        employer: req.body.employer,
+        employee: req.body.employee,
         bio: req.body.bio,
         duration: req.body.duration,
         expiryDate: req.body.expiryDate,
