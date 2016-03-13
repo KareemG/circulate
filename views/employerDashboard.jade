@@ -7,16 +7,17 @@ block content
       i.fa.fa-user-plus
       | New Posting
   
-.employer-widget-container
-  -console.log(postings);
-  -for(i=0; i<postings.length; i++) {
-    .posting-widget   
-      h1 -postings[i].employee.profile.name;
-      p -postings[i].bio;
-      h2
-        -for(j=0; j<postings[i].tags.length; j++) {
-          .tag 
-            -postings[i].tags[j];
-        -}
+  .employer-widget-container
+    -console.log(title);
+    -console.log(hi);
+    -for(i=0; i<postings.length; i++) {
+      .posting-widget   
+        h1 -postings[i].employee.profile.name;
+        p -postings[i].bio;
+        h2
+          -for(j=0; j<postings[i].tags.length; j++) {
+            .tag 
+              -postings[i].tags[j];
+          -}
       
-  -}
+    -}

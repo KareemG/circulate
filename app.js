@@ -133,7 +133,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 // New routes
 app.get('/postings', postingController.getPostings);
 app.get('/posting', postingController.getPosting); 
-app.post('/posting', postingController.postPosting);
+app.post('/newposting', postingController.postPosting);
 app.post('/posting/update', postingController.postUpdatePosting);
 app.post('/posting/delete', postingController.postDeletePosting);
 app.get('/messages', messageController.getMessages);
