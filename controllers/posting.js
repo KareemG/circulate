@@ -12,9 +12,10 @@ var Posting = require('../models/Posting');
 exports.getPostings = function(req, res, next) {
     Posting.find(function(err, list) {
         if (err) return next(err);
+        req.postings = list;
         res.render('employerDashboard', {
             title: 'Eyyyyy',
-            postings: list
+   	    postings: list
         });
     });
 };

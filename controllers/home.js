@@ -5,11 +5,11 @@
 exports.index = function(req, res) {
     if (req.user) {
         if (req.user.isEmployee == 1) {
-            res.render('employeeDashboard', {
+            res.redirect('employeeDashboard', {
             });
         }
         else {
-            res.render('employerDashboard', {
+            res.redirect('employerDashboard', {
             });
         }
     }
