@@ -23,9 +23,10 @@ block content
         //input.form-control(type='isEmployee', name='isEmployee', id='isEmployee' placeholder='0/1')
     .form-group
       label-col-sm-3.control-label(for='isEmployee')
-        input(type="radio", name='isEmployee', style="margin-center: auto; margin-right: auto; border: 1px solid black;" id="radio", value=0, checked=isEmployee=="0")
-        | Employer
-        input(type="radio", name='isEmployee',  id="radio", value=1, checked=isEmployee=="1")  
+        input(type="radio", name='isEmployee', id="radio", value=0, checked=isEmployee=="0")
+        | Employer 
+        span(style="margin-left: 30px;")
+        input(type="radio", name='isEmployee', id="radio", value=1, checked=isEmployee=="1")  
         | Employee
     .form-group
       .col-sm-offset-3.col-sm-7
