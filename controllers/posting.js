@@ -10,29 +10,28 @@ var Posting = require('../models/Posting');
  * Postings page.
  */
 exports.getPostings = function(req, res, next) {
-    var db = req.db;
-    var collection = db.get('postings');
-    var stuff = collection.find();
-    console.log(stuff);
-    res.render('employerDashboard', function(err, list) {
-      title: 'Eyyyyy',
-      hi: "ey"
-    });    
+    Posting.find(function(err, list) {
+        if (err) return next(err);
+        res.render('employerDashboard', {
+            title: 'Eyyyyy',
+            postings: list
+        });
+    });
 };
 
 exports.getPosting = function(req, res, next) {
     var postingId = req.postingId;
-    Posting.findOne({ id: postingId }, function (err, posting) {
-        if(err) {
+    Posting.findOne({ id: postingId }, function(err, posting) {
+        if (err) {
             return next(err);
         }
         return JSON.stringify(posting);
-    });    
+    });
 };
 
 exports.getNewPosting = function(req, res, next) {
     res.render('newPosting', {
-       title: 'New Posting' 
+        title: 'New Posting'
     });
 }
 
@@ -49,7 +48,7 @@ exports.postPosting = function(req, res) {
     });
 
     posting.save(function(err) {
-        if(err) {
+        if (err) {
             return next(err);
         }
         req.flash('success', { msg: 'Posting created. ' });
