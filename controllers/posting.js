@@ -9,11 +9,26 @@ var posting = require('../models/Posting');
  * GET /postings
  * Postings page.
  */
-exports.getPostings = function(req, res) {
-    res.render('postings', {
-        title: 'Postings'
+exports.getPostings = function(req, res, next) {
+    Posting.find(function(err, postings) {
+        if (err) {
+            return next(err);
+        }
+        res.render('postings', {
+            title: 'Postings',
+            postings: JSON.stringify(postings)
+        });
     });
 };
+
+exports.getPosting = function(req, res, next){
+    Posting.findOne({ id: postingId }, function (err, posting) {
+        if(err) {
+            return next(err);
+        }
+        return JSON.stringify(posting);
+    })    
+}
 
 exports.postPosting = function(req, res) {
     var posting = new Posting({
