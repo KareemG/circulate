@@ -14,7 +14,7 @@ exports.getPostings = function(req, res, next) {
         if (err) return next(err);
         req.postings = list;
         res.render('employerDashboard', {
-            title: 'Eyyyyy',
+            title: 'Employer Dashboard',
    	    postings: list
         });
     });
