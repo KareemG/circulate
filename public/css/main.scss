@@ -120,6 +120,15 @@ textarea {
   
 }
 
+.posting-widget:hover {
+  background-color: black;
+  color: white;
+  webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .posting-widget img {
     width: 40px;
     height: 40px;
@@ -172,6 +181,7 @@ textarea {
 .posting-view .info {
   width: 100x;
   height: 100px;
+  margin-right: 20px;
   border: 1px solid black;
   display: flex; 
   flex-direction: row;
@@ -299,6 +309,7 @@ textarea {
     width: 100%;
     height: auto;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .employee-widget-container-exchange {
@@ -306,6 +317,7 @@ textarea {
     height: auto;
     flex-direction: row;
     vertical-align: auto;
+    margin-right: 10px;
     
 }
 .employer-widget-container-exchange-arrow {
