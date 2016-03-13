@@ -20,8 +20,9 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: '' },
     companyName: { type: String, default: '' },
     companyDesc: { type: String, default: '' }
-    
   },
+  linkedin: String,
+  tokens: Array,
   potentialMatches: [Posting],
   employerPostings: [Posting],
   myEmployees: [User],

@@ -595,10 +595,12 @@ exports.postVenmo = function(req, res, next) {
  */
 exports.getLinkedin = function(req, res, next) {
   Linkedin = require('node-linkedin')(process.env.LINKEDIN_ID, process.env.LINKEDIN_SECRET, process.env.LINKEDIN_CALLBACK_URL);
+
   var token = _.find(req.user.tokens, { kind: 'linkedin' });
-  // var linkedin = Linkedin.init(token.accessToken);
+  var linkedin = Linkedin.init(token.accessToken);
   linkedin.people.me(function(err, $in) {
     if (err) {
+      console.log(err);
       return next(err);
     }
     res.render('api/linkedin', {

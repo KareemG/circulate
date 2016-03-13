@@ -340,7 +340,8 @@ passport.use(new LinkedInStrategy({
       } else {
         User.findById(req.user.id, function(err, user) {
           user.linkedin = profile.id;
-          // user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          console.log(profile);
+          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.location = user.profile.location || profile._json.location.name;
           user.profile.picture = user.profile.picture || profile._json.pictureUrl;
@@ -365,8 +366,10 @@ passport.use(new LinkedInStrategy({
           console.log("YOLO $$$$$$$$$$$");
           var user = new User();
           console.log(user);
+          console.log("PROFILE");
+          console.log(profile);
           user.linkedin = profile.id;
-          // user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
           user.email = profile._json.emailAddress;
           user.profile.name = profile.displayName;
           user.profile.location = profile._json.location.name;
