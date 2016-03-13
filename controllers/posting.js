@@ -3,7 +3,7 @@ var async = require('async');
 var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
-var posting = require('../models/Posting');
+var Posting = require('../models/Posting');
 
 /**
  * GET /postings
@@ -21,14 +21,15 @@ exports.getPostings = function(req, res, next) {
     });
 };
 
-exports.getPosting = function(req, res, next){
+exports.getPosting = function(req, res, next) {
+    var postingId = req.postingId;
     Posting.findOne({ id: postingId }, function (err, posting) {
         if(err) {
             return next(err);
         }
         return JSON.stringify(posting);
-    })    
-}
+    });    
+};
 
 exports.postPosting = function(req, res) {
     var posting = new Posting({
@@ -41,13 +42,13 @@ exports.postPosting = function(req, res) {
     });
 
     posting.save(function(err) {
-        if (err) {
+        if(err) {
             return next(err);
         }
         req.flash('success', { msg: 'Posting created. ' });
         res.redirect('/');
-    })
-}
+    });
+};
 
 exports.postUpdatePosting = function(req, res, next) {
     Posting.findById(req.posting.id, function(err, posting) {
@@ -67,9 +68,9 @@ exports.postUpdatePosting = function(req, res, next) {
             }
             req.flash('success', { msg: 'Posting updated.' });
             res.redirect('/');
-        })
+        });
     });
-}
+};
 
 /**
  * POST /account/delete
