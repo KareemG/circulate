@@ -45,3 +45,6 @@ WiredTiger
 *.turtle
 
 *.bson
+
+main.css
+main.css.map

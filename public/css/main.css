@@ -9000,6 +9000,7 @@ textarea {
   flex-direction: row;
   flex-wrap: wrap; }
 
+<<<<<<< HEAD
 #radio {
   margin-left: auto;
   margin-right: auto;
@@ -9010,4 +9011,6 @@ textarea {
   margin-right: auto;
   border: 3px solid black; }
 
+=======
+>>>>>>> f6dedf2863769b807f5c611bd5919d65cb4c4f2c
 /*# sourceMappingURL=main.css.map */
