@@ -91,7 +91,8 @@ exports.postSignup = function(req, res, next) {
   var user = new User({
     email: req.body.email,
     password: req.body.password,
-    isEmployee: req.body.isEmployee
+    isEmployee: req.body.isEmployee,
+    companyName: req.body.companyName
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {

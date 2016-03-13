@@ -1,8 +1,8 @@
 extends layout
 
 block content
-.page-header
-    h3 New Posting
+  .page-header
+  h3 New Posting
   form.form-horizontal(id='newposting-form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
@@ -10,9 +10,9 @@ block content
       .col-sm-7
         input.form-control(type='employee', name='employee', id='employee', placeholder='Employee', autofocus)
     .form-group
-      label.col-sm-3.control-label(for='employer') Email
+      label.col-sm-3.control-label(for='employer') Employer
       .col-sm-7
-        input.form-control(type='employer', name='employer', id='employer', placeholder='#{user.companyName}', autofocus)
+        input.form-control(type='employer', name='employer', id='employer', placeholder='#{companyName}', autofocus)
     .form-group
       label.col-sm-3.control-label(for='bio') Bio
       .col-sm-7
@@ -21,6 +21,10 @@ block content
       label.col-sm-3.control-label(for='duration') Duration
       .col-sm-7
         input.form-control(type='duration', name='duration', id='duration', placeholder='duration')
+    .form-group
+      label.col-sm-3.control-label(for='bio') Bio
+      .col-sm-7
+        input.form-control(type='bio', name='bio', id='bio', placeholder='bio')   
     //.form-group
       //label.col-sm-3.control-label(for='isEmployee') Employer/Employee (0/1)
       //.col-sm-7
