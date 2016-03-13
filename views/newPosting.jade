@@ -1,4 +1,38 @@
 extends layout
 
 block content
-h1 New Posting
+.page-header
+    h3 New Posting
+  form.form-horizontal(id='newposting-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='employee') Employee
+      .col-sm-7
+        input.form-control(type='employee', name='employee', id='employee', placeholder='Employee', autofocus)
+    .form-group
+      label.col-sm-3.control-label(for='employer') Email
+      .col-sm-7
+        input.form-control(type='employer', name='employer', id='employer', placeholder='#{user.companyName}', autofocus)
+    .form-group
+      label.col-sm-3.control-label(for='bio') Bio
+      .col-sm-7
+        input.form-control(type='bio', name='bio', id='bio', placeholder='bio')
+    .form-group
+      label.col-sm-3.control-label(for='duration') Duration
+      .col-sm-7
+        input.form-control(type='duration', name='duration', id='duration', placeholder='duration')
+    //.form-group
+      //label.col-sm-3.control-label(for='isEmployee') Employer/Employee (0/1)
+      //.col-sm-7
+        //input.form-control(type='isEmployee', name='isEmployee', id='isEmployee' placeholder='0/1')
+    .form-group
+      label-col-sm-3.control-label(for='isEmployee')
+        input(type="radio", name='isEmployee', id="radio", value=0, checked=isEmployee=="0")
+        | Employer 
+        span(style="margin-right: 30px;")
+        input(type="radio", name='isEmployee', id="radio", value=1, checked=isEmployee=="1")  
+        | Employee
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit')
+          i.fa.fa-user-plus
