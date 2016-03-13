@@ -18,12 +18,15 @@ block content
       .col-sm-7
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
     .form-group
-      label-col-sm-3.control-label(for='isEmployee')
-      .col-sm-7
-        input(type="radio", name='isEmployee', value=0, checked=isEmployee==0)
-        | Employer
-        input(type="radio", name='isEmployee', value=1, checked=isEmployee==1)  
-        | Employee
+      label.col-sm-3.control-label(for='isEmployee')
+      .col-sm-4
+        label.radio.col-sm-4
+          input(type='radio', checked=isEmployee=='0', name='isEmployee', value='Employer', data-toggle='radio')
+          span Employer
+      .col-sm-5
+        label.radio.col-sm-5
+          input(type='radio', checked=isEmployee=='0', name='isEmployee', value='Employee', data-toggle='radio')
+          span Employee
     .form-group
       .col-sm-offset-3.col-sm-7
         button.btn.btn-success(type='submit')

@@ -140,6 +140,7 @@ app.get('/messages', messageController.getMessages);
 app.post('/message', messageController.postMessage);
 app.post('/message/delete', messageController.postDeleteMessage);
 app.get('/employerDashboard', postingController.getPostings);
+app.post('/newposting', postingController.getNewPosting);
 
 /**
  * API examples routes.

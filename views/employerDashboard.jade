@@ -1,7 +1,12 @@
 extends layout
 
 block content
-  h1 Your Employer Dashboard
+  h1 Employer Dashboard
+  col-sm-offset-3.col-sm-7
+    button.btn.btn-default(href='/auth/linkedin')
+      i.fa.fa-user-plus
+      | New Posting
+  
 .employer-widget-container
   -console.log(postings);
   -for(i=0; i<postings.length; i++) {
@@ -15,9 +20,5 @@ block content
         -}
       
   -}
-.form-group 
-    col-sm-offset-3.col-sm-7
-    button.btn.btn-success(type='submit')
-    i.fa.fa-user-plus
-    | Sign Up
+
   

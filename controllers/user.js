@@ -46,7 +46,7 @@ exports.postLogin = function(req, res, next) {
         return next(err);
       }
       req.flash('success', { msg: 'Success! You are logged in.' });
-      res.redirect(req.session.returnTo || '/');
+      res.redirect('/');
     });
   })(req, res, next);
 };
@@ -81,7 +81,7 @@ exports.postSignup = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
   req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
-  req.assert('isEmployee', 'Must select employment status').equals(0 || 1);
+  req.assert('isEmployee', 'Must select employment status').equals('0' || '1');
   var errors = req.validationErrors();
 
   if (errors) {
