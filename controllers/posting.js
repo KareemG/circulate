@@ -14,9 +14,8 @@ exports.getPostings = function(req, res, next) {
     var collection = db.get('postings');
     var stuff = collection.find();
     console.log(stuff);
-    res.render('employerDashboard', function(err, list) {
-      title: 'Eyyyyy',
-      hi: "ey"
+    res.render('/employerDashboard', function(err, list) {
+      title: 'Eyyyyy'
     });    
 };
 
