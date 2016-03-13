@@ -10,20 +10,14 @@ var Posting = require('../models/Posting');
  * Postings page.
  */
 exports.getPostings = function(req, res, next) {
-    Posting.find(function(err, postings) {
-        if (err) {
-            return next(err);
-        }
-        res.render('postings', {
-            title: 'Postings',
-            postings: JSON.stringify(postings),
-            
-        });
-        res.render('employerDashboard', {
-	    title: 'Employer Dashboard',
-	    postings: JSON.stringify(postings),
-	});
-    });
+    var db = req.db;
+    var collection = db.get('postings');
+    var stuff = collection.find();
+    console.log(stuff);
+    res.render('employerDashboard', function(err, list) {
+      title: 'Eyyyyy',
+      hi: "ey"
+    });    
 };
 
 exports.getPosting = function(req, res, next) {
