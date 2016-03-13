@@ -2,13 +2,14 @@ extends layout
 
 block content
   h1 #{title}
+  -console.log(postings);
   col-sm-offset-3.col-sm-7
     a(href='/newposting')
       i.fa.fa-user-plus
       | New Posting
   
   .employer-widget-container
-    -for(i=1; i<postings.length+1; i++) {
+    -for(i=0; i<postings.length; i++) {
       .posting-widget   
       h1 #{postings[i].duration}
         p #{postings[i].bio}

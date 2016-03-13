@@ -5,12 +5,10 @@
 exports.index = function(req, res) {
     if (req.user) {
         if (req.user.isEmployee == 1) {
-            res.redirect('employeeDashboard', {
-            });
+            res.redirect('employeeDashboard');
         }
         else {
-            res.redirect('employerDashboard', {
-            });
+            res.redirect('employerDashboard');
         }
     }
     else {

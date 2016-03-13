@@ -49,6 +49,7 @@ exports.postPosting = function(req, res) {
     });
 
     posting.save(function(err) {
+   	
         if (err) {
             return next(err);
         }
