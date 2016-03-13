@@ -35,6 +35,8 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var postingController = require('./controllers/posting');
+var messageController = require('./controllers/message');
 
 /**
  * API keys and Passport configuration.
@@ -126,6 +128,16 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+// New routes
+app.get('/postings', postingController.getPostings);
+app.get('/posting', postingController.getPosting); 
+app.post('/posting', postingController.postPosting);
+app.post('/posting/update', postingController.postUpdatePosting);
+app.post('/posting/delete', postingController.postDeletePosting);
+app.get('/messages', messageController.getMessages);
+app.post('/message', messageController.postMessage);
+app.post('/message/delete', messageController.postDeleteMessage);
 
 /**
  * API examples routes.
