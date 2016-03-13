@@ -5,8 +5,8 @@ var Posting = require('../models/Posting')
 var messageSchema = new mongoose.Schema({
     postingTo: [Posting],
     postingFrom: [Posting],
-    employee: [User],
-    employer: [User]
+    sender: [User],
+    receiver: [User]
 }, { timestamps: true });
 
 var Message = mongoose.model('Message', messageSchema);

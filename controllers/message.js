@@ -31,7 +31,10 @@ exports.getMessage = function(req, res, next) {
 
 exports.postMessage = function(req, res) {
     var message = new Message({
-       // todo 
+       postingTo: req.body.postingTo,
+       postingFrom: req.body.postingFrom,
+       sender: req.body.sender,
+       receiver: req.body.receiver
     });
     
     message.save(function(err) {
